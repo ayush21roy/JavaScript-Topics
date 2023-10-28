@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch in JavaScript</title>
+</head>
+
+<body>
+    <form id="myForm">
+        Title <Input input type="text" id="titleText"></Input> <br><br>
+        Body <Input input type="text" id="bodyText"></Input> <br><br>
+        User Id <Input input type="text" id="userId"></Input> <br><br>
+
+        <input type="submit" id="saveForm">
+        <!-- This HTML FORM is for line 73 -->
+    </form>
+
+    <script>
+        /*
+        if(window.fetch)
+        {
+            // --------- fetch part code -------
+        }else{
+            // ------ XMLHttpRequest AJAX part code ----- as all browsers donot support fetch
+        }
+        */
+
+        // fetch("https://jsonplaceholder.typicode.com/users")
+        //     .then(function (response) {
+        //         return response.json();
+        //     })
+        //     .then((data) => {
+        //         console.log(data);
+
+        //         for (var x in data) {
+        //             document.write(`${data[x].name} - ${data[x].email} <br>`)
+        //         }
+        //     })
+        //     .catch((error) => {
+        //         console.log("Can't Fetch Data");
+        //     })
+        // ---------------------------------------------------------------------------------------
+
+        //  -------------- CRUD operation in FETCH ---------
+
+        // 1.   Creating / Inserting in file using fetch
+
+        // var obj = {
+        //     title: 'foo',
+        //     body: 'bar',
+        //     userId: 1,
+        // }
+
+        // fetch('https://jsonplaceholder.typicode.com/posts', {
+        //     method: 'POST',
+        //     body: JSON.stringify(obj),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // })
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json));
+
+        /*
+                    Same for Update and Delete data on server using FETCH
+                    can be accessed on "fake json data" website code snippets
+
+            link :  https://jsonplaceholder.typicode.com/guide/
+        */
+
+        // ------------------- Getting data from a FORM ----------------
+        document.getElementById("saveForm").addEventListener('click', function (e) {
+            e.preventDefault(); // Doesn't let page refresh as this was main concept of AJAX
+
+            var obj = {
+                title: document.getElementById("titleText").value,
+                body: document.getElementById("bodyText").value,
+                userId: document.getElementById("userId").value,
+            }
+
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify(obj),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+        })
+
+    </script>
+</body>
+
+</html>
