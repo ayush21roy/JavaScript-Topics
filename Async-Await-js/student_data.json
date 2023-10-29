@@ -1,0 +1,17 @@
+[
+    {
+        "name": "aman",
+        "age": "25",
+        "city": "goa"
+    },
+    {
+        "name": "bipul",
+        "age": "23",
+        "city": "bombay"
+    },
+    {
+        "name": "mridul",
+        "age": "24",
+        "city": "ahemdabad"
+    }
+]
