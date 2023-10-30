@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map JavaScript</title>
+</head>
+
+<body>
+    Map JavaScript
+
+    <script>
+        // const arr = [5, 1, 3, 2, 6];
+
+        // double = [10, 2, 6, 4, 12];
+        // tripe = [15, 3, 9, 6, 18];
+        // binary = ["101", "1", "11", "10", "01"];
+
+        // function double(x) {
+        //     return x * 2;           // lly for triple => x*3;
+        // }
+
+        // function binary(x) {
+        //     return x.toString(2);    // read about toString-radix in Js on google
+        // }
+        // const res = arr.map(binary);
+        // console.log(res);
+
+// ---------------------------------- example 2 -----------------------------------------
+        const data = [
+            { name: "sunil", surname: "kapoor", age: 25 },
+            { name: "aman", surname: "beniwal", age: 22 },
+            { name: "yukti", surname: "singh", age: 24 },
+            { name: "sanskriti", surname: "shukla", age: 25 }
+        ]
+        // get list[] of all "name-surnames"
+
+        const listName = data.map((x) => {
+            return x.name + " " + x.surname;
+        })
+        console.log(listName);
+    </script>
+</body>
+
+</html>
